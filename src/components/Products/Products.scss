@@ -1,0 +1,69 @@
+@import "../../css-config/mixins.scss";
+
+$primary-color: #8e2de2;
+$secondary-color: #f4f4f4;
+$heading-font: 'Helvetica Neue', sans-serif;
+
+.products-container {
+    margin: 50px 0;
+    background-color: $secondary-color; // Light background for contrast
+    padding: 20px; // Added padding for better spacing
+    border-radius: 10px; // Rounded corners for a softer look
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+
+    @include md {
+        margin: 75px 0;
+        padding: 40px; // Increase padding on larger screens
+    }
+
+    .sec-heading {
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-family: $heading-font;
+        color: $primary-color; // Using primary color for headings
+
+        @include md {
+            margin-bottom: 35px;
+            font-size: 24px;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            margin-top: 5px;
+            width: 60px; // Slightly wider for visual balance
+            height: 4px; // Thicker line for emphasis
+            background-color: $primary-color;
+            border-radius: 2px; // Rounded edges for the line
+            @include md {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .products {
+        display: flex;
+        flex-flow: wrap;
+        gap: 15px; // Increased gap for better separation
+        justify-content: center; // Center align products
+
+        @include md {
+            gap: 20px;
+        }
+
+        .product {
+            background-color: white; // Product card background
+            border-radius: 8px; // Rounded corners for product cards
+            padding: 15px; // Internal padding for product details
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Subtle shadow for product cards
+            transition: transform 0.3s, box-shadow 0.3s; // Smooth transition effect
+
+            &:hover {
+                transform: translateY(-5px); // Lift effect on hover
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Darker shadow on hover
+            }
+        }
+    }
+}
